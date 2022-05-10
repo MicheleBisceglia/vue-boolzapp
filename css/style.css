@@ -1,0 +1,56 @@
+/*RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.boolzapp {
+    background-color: #d7dbd6;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 600px;
+    width: 70%;
+    border: solid 1px black;
+    background-color: #eaeaea;
+    display: flex;
+}
+
+.userlist {
+    width: 40%;
+    height: 100%;
+}
+
+.chat {
+    width: 60%;
+    height: 100%;
+}
+
+.userlist-item {
+    height: 55px;
+    width: 100%;
+    border: solid 1px black;
+}
+
+.input-container{
+    background-color: white;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px black;
+    
+}
+
+input {
+    width: 97%;
+    height: 27px;
+
+}
+
