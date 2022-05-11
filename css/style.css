@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 /*Common*/
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
 html {
     font-family: Lato, Helvetica, sans-serif;
 }
@@ -24,16 +30,28 @@ a {
     background-image: linear-gradient(#009688 20%, #d7dbd6 20%) ;
     height: 100vh;
     width: 100vw;
-    min-width: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    min-width: 800px;
+    
 }
 .container {
     height: 600px;
     width: 80%;
     background-color: white;
+   
+}
+
+/* header */
+.header {
+    height: 55px;
+    width: 100%;
+    background-color: #eaeaea;
     display: flex;
+    align-items: center;
+    padding-left: 5px;
 }
 
 /*section1 / Lista contatti */
@@ -41,15 +59,7 @@ a {
     width: 35%;
     height: 100%;
     border-right: 1px solid #b1b1b1;
-}
-
-.first-item {
-    height: 55px;
-    width: 100%;
-    background-color: #eaeaea;
-    display: flex;
-    align-items: center;
-    padding-left: 5px;
+    float: left;
 }
 
 .item-left {
@@ -69,7 +79,7 @@ a {
     border-radius: 50%;
 }
 
-.second-item {
+.disclaimer {
     height: 55px;
     width: 100%;
     background-color: #8edafc;
@@ -77,12 +87,13 @@ a {
     align-items: center;
 }
 
-.second-item-text {
+.disclaimer-text {
     font-size: 70%;
     margin-left: 10px;
 }
 
 #bell-icon {
+    color: #8edafc;
     background-color: white;
     border-radius: 50%;
     height: 35px;
@@ -91,9 +102,6 @@ a {
     align-items: center;
     justify-content: center;
     margin-left: 10px;
-}
-#bell-icon i {
-    color: #8edafc;
 }
 
 .contact-list {
@@ -115,7 +123,7 @@ a {
     margin-top: 10px;
 }
 
-.contact-input{
+.contact-search{
     background-color: white;
     height: 30px;
     display: flex;
@@ -123,10 +131,9 @@ a {
     align-items: center;
     border: solid 1px #f1f1f1;
     margin-left: 10px;
-    
 }
 
-.contact-input input {
+.contact-search input {
     width: 97%;
     height: 27px;
     border: #f1f1f1;
@@ -137,6 +144,9 @@ a {
     width: 65%;
     height: 100%;
     background-image: url(../img/mine.jpg);
+    min-width: 400px;
+    float: right;
+    
     
 }
 
@@ -218,6 +228,11 @@ a {
     width: 100%;
     padding-right: 10px;
     padding-top: 10px;
+}
+
+.mess-time {
+    font-size: 60%;
+    text-align: end;
 }
 
 

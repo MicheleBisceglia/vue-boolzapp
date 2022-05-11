@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,87 +12,107 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
-    <div id="root">
-        <div class="boolzapp">
-            <div class="container">
-                <section class="section1">
-                    <div class="first-item ">
-                        <div class="item-left">
-                            <img class="myAvatar" src="img/avatar_io.jpg" alt="avatar_io">
-                            <span>Sofia</span>
-                        </div>
-                        <div class="item-right">
-                            <i class="fas fa-circle-notch"></i>
-                            <i class="fas fa-comment-alt"></i>
-                            <i class="fas fa-ellipsis-v"></i>
-                        </div>
+    <div id="root"  class="boolzapp">
+        
+        <div class="container">
+    <!--section 1-->    
+            <section class="section1">
+                
+                <!--section header-->
+                <header class="header">
+                    <div class="item-left">
+                        <img class="myAvatar" src="img/avatar_io.jpg" alt="avatar_io">
+                        <span>Sofia</span>
                     </div>
-                    <div class="second-item">
-                        <div id="bell-icon">
-                            <i class="fas fa-bell-slash"></i>
-                        </div>
-                        <div class="second-item-text">
-                            <p>Ricevi notifiche di nuovi messaggi</p>
-                            <a href="">attiva modifiche desktop</a>
-                        </div>
+                    <div class="item-right">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
                     </div>
-                    <div class="contact-input">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="cerca o inizia una nuova chat">
-                    </div>
-                <!--Lista Contatti-->    
-                    <div class="contact-list">
-                        <div v-for="(item,index) in contacts">
-                            <div class="contact">
-                                <img class="avatar" :src="'img/avatar' + item.avatar + '.jpg'" alt="avatar">
-                                <span class="name">{{ item.name }}</span>
-                                <div class="date">
-                                    <p>{{ item.messages[0].date }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="section2">
-                    <div class="first-item">
-                        <div class="item-left">
-                            <img class="myAvatar" src="img/avatar_1.jpg" alt="avatar_io">
-                            <span>Michele</span>
-                        </div>
-                        <div class="item-right">
-                            <i class="fas fa-search"></i>
-                            <i class="fas fa-paperclip"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                </header>
+                 <!-- /section header-->
 
+                <!--contact disclaimer-->
+                <div class="disclaimer">
+                        <i id="bell-icon" class="fas fa-bell-slash"></i>
+                    <div class="disclaimer-text">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <a href="">attiva modifiche desktop</a>
+                    </div>
+                </div>
+                <!-- /contact disclaimer-->
+
+                <!--contact search-->
+                <div class="contact-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                </div>
+                <!--/ contact search-->
+                
+                <!--Lista Contatti-->    
+                <div class="contact-list">
+                    <div v-for="(item,index) in contacts">
+                        <div class="contact">
+                                <img class="avatar" :src="'img/avatar' + item.avatar + '.jpg'" alt="avatar">
+                            <span class="name">{{ item.name }}</span>
+                            <div class="date">
+                                <p>{{ item.messages[0].date }}</p>
+                            </div>
                         </div>
                     </div>
-                        <div class="chat">
-                            <div class="chat-right">
-                                <div class="receveid">
-                                    <span>Hai portato a spasso il cane?</span>
-                                </div>
-                            </div>
-                            <div class="chat-right">
-                                <div class="receveid">
-                                    <span>Ricordati di stendere i panni</span>
-                                </div>
-                            </div>
-                            <div class="chat-left">
-                                <div class="sent">
-                                    <span>Tutto fatto!</span>
-                                </div>
+                </div>
+                <!-- / Lista Contatti-->
+
+            </section>
+    <!-- /section 1-->    
+        
+    <!--section 2-->    
+            <section class="section2">
+                <div class="header">
+                    <div class="item-left">
+                        <img class="myAvatar" src="img/avatar_1.jpg" alt="avatar_io">
+                        <span>Michele</span>
+                    </div>
+                    <div class="item-right">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-right">
+                        <div class="receveid">
+                            <span>Hai portato a spasso il cane?</span>
+                            <div class="mess-time">
+                                12.00
+                              </div>
+                        </div>
+                    </div>
+                    <div class="chat-right">
+                        <div class="receveid">
+                            <span>Ricordati di stendere i panni</span>
+                            <div class="mess-time">
+                              12.00
                             </div>
                         </div>
-                        <div class="chat-input">
-                            <i class="far fa-smile"></i>
-                            <input type="text" placeholder="scrivi un messaggio">
-                            <i class="fas fa-microphone"></i>
+                            
+                    </div>
+                    <div class="chat-left">
+                         <div class="sent">
+                            <span>Tutto fatto!</span>
                         </div>
-                </section>
-            </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <i class="far fa-smile"></i>
+                    <input type="text" placeholder="scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
+                </div>
+            </section>
+    <!-- / section 2-->    
         </div>
     </div>
-    
+   
     <script src="js/script.js"></script>
 </body>
 </html>
