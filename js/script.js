@@ -163,8 +163,10 @@ const app = new Vue(
                             status: 'received'
                         }
                     ],
+                    
                 }
             ],
+            currentContact : 0,
             
         }
     }      

@@ -51,7 +51,8 @@
                 
                 <!--Lista Contatti-->    
                 <div class="contact-list">
-                    <div v-for="(item,index) in contacts">
+                    <div v-for="(item,index) in contacts"
+                    :class=  "{ 'contact-active' : currentContact === index }">
                         <div class="contact">
                                 <img class="avatar" :src="'img/avatar' + item.avatar + '.jpg'" alt="avatar">
                             <span class="name">{{ item.name }}</span>
@@ -70,8 +71,8 @@
             <section class="section2">
                 <div class="header">
                     <div class="item-left">
-                        <img class="myAvatar" src="img/avatar_1.jpg" alt="avatar_io">
-                        <span>Michele</span>
+                        <img class="myAvatar" :src="'img/avatar' + contacts[currentContact].avatar + '.jpg'" alt="avatar_io">
+                        <span>{{ contacts[currentContact].name }}</span>
                     </div>
                     <div class="item-right">
                         <i class="fas fa-search"></i>
@@ -82,7 +83,7 @@
                 <div class="chat">
                     <div class="chat-right">
                         <div class="receveid">
-                            <span>Hai portato a spasso il cane?</span>
+                            <span>{{ contacts[currentContact].messages[0].message }}</span>
                             <div class="mess-time">
                                 12.00
                               </div>
@@ -90,7 +91,7 @@
                     </div>
                     <div class="chat-right">
                         <div class="receveid">
-                            <span>Ricordati di stendere i panni</span>
+                            <span>{{ contacts[currentContact].messages[1].message }}</span>
                             <div class="mess-time">
                               12.00
                             </div>
@@ -99,7 +100,7 @@
                     </div>
                     <div class="chat-left">
                          <div class="sent">
-                            <span>Tutto fatto!</span>
+                            <span>{{ contacts[currentContact].messages[2].message }}!</span>
                         </div>
                     </div>
                 </div>

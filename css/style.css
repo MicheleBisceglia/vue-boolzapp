@@ -112,7 +112,7 @@ a {
 .contact {
     height: 55px;
     width: 100%;
-    border-top: #b1b1b1 solid 1px;
+    border-top: #d7dbd6 solid 1px;
     display: flex;
 }
 
@@ -137,6 +137,10 @@ a {
     width: 97%;
     height: 27px;
     border: #f1f1f1;
+}
+
+.contact-active {
+    background-color: #d7dbd6;
 }
 
 /*Section 2 / Chat */
