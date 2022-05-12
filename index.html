@@ -15,7 +15,7 @@
     <div id="root"  class="boolzapp">
         
         <div class="container clearfix">
-    <!--section 1-->    
+    <!--section 1 / col left-->    
             <section class="section1">
                 
                 <!--section header-->
@@ -45,15 +45,16 @@
                 <!--contact search-->
                 <div class="contact-search">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                    <input v-model="search" @keyUp="searchFunction" type="text" placeholder="cerca o inizia una nuova chat">
                 </div>
                 <!--/ contact search-->
                 
-                <!--Lista Contatti-->    
+                <!--contact list-->    
                 <div class="contact-list">
                     <div  
                     @click="chatChange(index)"
-                    v-for="(item,index) in contacts"
+                    v-if="item.visible"
+                    v-for=" (item,index) in contacts"
                     :class=  "{ 'contact-active' : currentContact === index }">
                         <div class="contact">
                                 <img class="avatar" :src="'img/avatar' + item.avatar + '.jpg'" alt="avatar">
@@ -64,13 +65,15 @@
                         </div>
                     </div>
                 </div>
-                <!-- / Lista Contatti-->
+                <!-- / contact list-->
 
             </section>
     <!-- /section 1-->    
         
-    <!--section 2-->    
+    <!--section / col left 2-->    
             <section class="section2">
+              
+            <!--section header-->
                 <header class="header">
                     <div class="item-left">
                         <img class="myAvatar" :src="'img/avatar' + contacts[currentContact].avatar + '.jpg'" alt="avatar_io">
@@ -82,11 +85,13 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </header>
+            <!-- /section header-->
+
+            <!-- Chat -->
                 <div class="chat">
                     <div>
                         <div v-for="item in contacts[currentContact].messages"
-                        :class = " item.status == 'received' ? 'sent' : 'receveid' "
-                        >
+                        :class = " item.status == 'received' ? 'sent' : 'receveid' ">
                             <span>{{ item.message }}</span>
                             <div class="mess-time">
                                 {{ item.date }}
@@ -94,11 +99,15 @@
                         </div>
                     </div>
                 </div>
+            <!-- / Chat -->
+
+            <!-- Chat input -->
                 <div class="chat-input">
                     <i class="far fa-smile"></i>
                     <input @keyup.enter="addMess"  v-model ="newMess" type="text" placeholder="scrivi un messaggio">
                     <i class="fas fa-microphone"></i>
                 </div>
+                <!-- /Chat input -->
             </section>
     <!-- / section 2-->    
         </div>

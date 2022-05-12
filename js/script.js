@@ -168,30 +168,46 @@ const app = new Vue(
             ],
             currentContact : 0,
             newMess : '',
-            
+            search : '',
         },
         methods: {
+            //Funzione per cambiare contatto e relativa chat
                 chatChange: function(index) {
                   this.currentContact = index;
                     } ,
+            //Funzione per scrivere un nuovo messaggio
                 addMess: function() {
                   const selectedContact = this.contacts[this.currentContact];
                   selectedContact.messages.push({
-                      date: '10/10/2020',
+                      date: '15.00',
                       message: this.newMess,
                       status: 'sent'
                   });
                 this.newMess = '' ;
                 setTimeout(this.receiveMess, 1000)                     
                 },
+            //Funzione per generare messaggio di risposta
                 receiveMess: function() {
                     const selectedContact = this.contacts[this.currentContact];
                     selectedContact.messages.push({
-                        date: '10/10/2020',
+                        date: '15.01',
                         message: 'ok',
                         status: 'received'
                     });
-                }
+                },
+            //Funzione per cercare contatti  
+                searchFunction:function(){
+                    const searchContact = this.search.toLowerCase();
+                    console.log(searchContact);
+                    this.contacts.forEach((item, i) => {
+                        if(item.name.toLowerCase().includes(searchContact)){
+                            item.visible = true;
+                        }else {
+                            item.visible = false;
+                        }
+                    });
+        
+                },
             }
         }
     )
