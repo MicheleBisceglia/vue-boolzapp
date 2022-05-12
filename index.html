@@ -14,7 +14,7 @@
 <body>
     <div id="root"  class="boolzapp">
         
-        <div class="container">
+        <div class="container clearfix">
     <!--section 1-->    
             <section class="section1">
                 
@@ -82,32 +82,20 @@
                     </div>
                 </header>
                 <div class="chat">
-                    <div class="chat-right">
-                        <div class="receveid">
-                            <span>{{ contacts[currentContact].messages[0].message }}</span>
+                    <div>
+                        <div v-for="item in contacts[currentContact].messages"
+                        :class = " item.status ? 'receveid' : 'sent' "
+                        >
+                            <span>{{ item.message }}</span>
                             <div class="mess-time">
                                 12.00
                               </div>
                         </div>
                     </div>
-                    <div class="chat-right">
-                        <div class="receveid">
-                            <span>{{ contacts[currentContact].messages[1].message }}</span>
-                            <div class="mess-time">
-                              12.00
-                            </div>
-                        </div>
-                            
-                    </div>
-                    <div class="chat-left">
-                         <div class="sent">
-                            <span>!</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="chat-input">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="scrivi un messaggio">
+                    <input type="text" placeholder="scrivi un messaggio" v-model ="newMess" @keyup.enter="addMess">
                     <i class="fas fa-microphone"></i>
                 </div>
             </section>

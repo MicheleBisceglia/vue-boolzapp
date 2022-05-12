@@ -167,8 +167,18 @@ const app = new Vue(
                 }
             ],
             currentContact : 0,
+            newMess : '',
             
-        }
-    }      
+        },
+        methods: {
+                chatChange: function(index) {
+                     this.currentContact = index;
+                    } ,
+              
+                }
+            
+            },
+        
+      
 )
 

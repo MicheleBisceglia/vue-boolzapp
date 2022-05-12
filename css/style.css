@@ -160,41 +160,33 @@ a {
     overflow-x:hidden;
 }
 
-.chat-right {
-    height: 55px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 40px;
-    padding-top: 60px;
-}
 .receveid {
     background-color: #d5f9ba;
-    padding: 10px;
+    margin: 10px;
     border-radius: 8px;
-}
-
-.chat-left {
-    height: 55px;
-    width: 100%;
-    display: flex;
+    min-width: 40%;
+    max-width: 40%;
+    position: relative;
+    left: 50%;
+    height: 30px;
     align-items: center;
-    padding-right: 40px;
-    padding-top: 60px;
+    display: flex;
+  
 }
 
 .sent {
-    display: flex;
-    align-items: center;
-    padding-left: 40px;
-    padding-top: 60px;
-}
-.sent span{
     background-color: white;
-    padding: 10px;
+    margin: 10px;
     border-radius: 8px;
+    min-width: 40%;
+    max-width: 40%;
+    position: relative;
+    left: 10%;
+    height: 30px;
+    align-items: center;
+    display: flex;
 }
+
 
 .chat-input {
     display: flex;
