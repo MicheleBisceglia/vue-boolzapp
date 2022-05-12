@@ -13,6 +13,7 @@
 
 html {
     font-family: Lato, Helvetica, sans-serif;
+    overflow: auto;
 }
 
 i {
@@ -40,7 +41,7 @@ a {
 .container {
     height: 600px;
     width: 80%;
-    background-color: white;
+    background-color: white
    
 }
 
@@ -106,7 +107,6 @@ a {
 
 .contact-list {
     overflow-y: scroll;
-    margin-left: 10px;
 }
 
 .contact {
@@ -114,6 +114,10 @@ a {
     width: 100%;
     border-top: #d7dbd6 solid 1px;
     display: flex;
+}
+
+.contact img {
+    margin-left: 10px;
 }
 
 .avatar {
@@ -148,45 +152,54 @@ a {
     width: 65%;
     height: 100%;
     background-image: url(../img/mine.jpg);
-    min-width: 400px;
     float: right;
-    
-    
 }
 
 .chat {
     height: calc(100% - 110px);
     overflow-y: scroll;
     overflow-x:hidden;
+    padding-top: 30px;
 }
 
 .receveid {
     background-color: #d5f9ba;
+    padding: 10px;
     margin: 10px;
     border-radius: 8px;
     min-width: 40%;
     max-width: 40%;
     position: relative;
     left: 50%;
-    height: 30px;
+    height: 40px;
     align-items: center;
     display: flex;
+    font-size: 70%;
   
 }
 
 .sent {
     background-color: white;
+    padding: 10px;
     margin: 10px;
     border-radius: 8px;
     min-width: 40%;
     max-width: 40%;
     position: relative;
-    left: 10%;
-    height: 30px;
+    left: 5%;
+    height: 40px;
     align-items: center;
     display: flex;
+    font-size: 70%;
 }
 
+.mess-time {
+    font-size: 60%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0px 10px 5px 0px ;
+}
 
 .chat-input {
     display: flex;
@@ -226,10 +239,7 @@ a {
     padding-top: 10px;
 }
 
-.mess-time {
-    font-size: 60%;
-    text-align: end;
-}
+
 
 
 

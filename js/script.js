@@ -171,14 +171,19 @@ const app = new Vue(
             
         },
         methods: {
+              computed: {
+                  currentContactObj() {
+                      return this.contacts[this.currentContact];
+                  }
+                
+              },
+            
                 chatChange: function(index) {
                      this.currentContact = index;
                     } ,
-              
-                }
-            
-            },
-        
+                
+            }
+            }
       
 )
 

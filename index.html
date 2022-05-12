@@ -84,11 +84,11 @@
                 <div class="chat">
                     <div>
                         <div v-for="item in contacts[currentContact].messages"
-                        :class = " item.status ? 'receveid' : 'sent' "
+                        :class = " item.status == 'received' ? 'sent' : 'receveid' "
                         >
                             <span>{{ item.message }}</span>
                             <div class="mess-time">
-                                12.00
+                                {{ item.date }}
                               </div>
                         </div>
                     </div>
