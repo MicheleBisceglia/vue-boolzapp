@@ -171,19 +171,28 @@ const app = new Vue(
             
         },
         methods: {
-              computed: {
-                  currentContactObj() {
-                      return this.contacts[this.currentContact];
-                  }
-                
-              },
-            
                 chatChange: function(index) {
-                     this.currentContact = index;
+                  this.currentContact = index;
                     } ,
-                
+                addMess: function() {
+                  const selectedContact = this.contacts[this.currentContact];
+                  selectedContact.messages.push({
+                      date: '10/10/2020',
+                      message: this.newMess,
+                      status: 'sent'
+                  });
+                this.newMess = '' ;
+                setTimeout(this.receiveMess, 1000)                     
+                },
+                receiveMess: function() {
+                    const selectedContact = this.contacts[this.currentContact];
+                    selectedContact.messages.push({
+                        date: '10/10/2020',
+                        message: 'ok',
+                        status: 'received'
+                    });
+                }
             }
-            }
-      
-)
+        }
+    )
 

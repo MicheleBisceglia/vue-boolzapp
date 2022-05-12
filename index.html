@@ -51,7 +51,8 @@
                 
                 <!--Lista Contatti-->    
                 <div class="contact-list">
-                    <div  @click="chatChange(index)"
+                    <div  
+                    @click="chatChange(index)"
                     v-for="(item,index) in contacts"
                     :class=  "{ 'contact-active' : currentContact === index }">
                         <div class="contact">
@@ -95,7 +96,7 @@
                 </div>
                 <div class="chat-input">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="scrivi un messaggio" v-model ="newMess" @keyup.enter="addMess">
+                    <input @keyup.enter="addMess"  v-model ="newMess" type="text" placeholder="scrivi un messaggio">
                     <i class="fas fa-microphone"></i>
                 </div>
             </section>
